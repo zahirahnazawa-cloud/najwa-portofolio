@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="id">
+    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Najwa Zahirah</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --gradient: linear-gradient(135deg, #6366f1, #f79ee5);
+    --purple: #a855f7;
+    --pink: #f79ee5;
+    --muted: #94a3b8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15), transparent 50%),
+        radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15), transparent 50%);
+    background-attachment: fixed;
+    color: #f8fafc;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+header {
+    position: sticky;
+    top: 15px;
+    z-index: 100;
+    width: 92%;
+    max-width: 1100px;
+    margin: 15px auto;
+}
+
+nav {
+    background: rgba(30, 41, 59, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 14px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* CONTAINER & SECTION */
+.container {
+    width: 92%;
+    max-width: 1050px;
+    padding: 10px 0 20px;
+    margin: auto;
+}
+
+section {
+    background: rgba(30, 41, 59, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 30px;
+    scroll-margin-top: 95px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: var(--pink);
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.profile-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--purple);
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25);
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 34px;
+    line-height: 1.25;
+}
+
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: var(--pink);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 12px 0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.hero-text p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--gradient);
+    color: white;
+    padding: 11px 24px;
+    border-radius: 12px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* GRID & CARDS */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 17px;
+    padding: 23px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--purple);
+}
+
+.card-icon {
+    font-size: 26px;
+    color: var(--purple);
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.card-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* SKILL BARS */
+.skill {
+    margin-bottom: 18px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.skill-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 20px;
+}
+
+/* TIMELINE */
+.timeline {
+    border-left: 2px solid var(--purple);
+    padding-left: 25px;
+    margin-left: 6px;
+}
+
+.timeline-item {
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -32px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: var(--pink);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--pink);
+}
+
+.timeline-item h3 {
+    font-size: 16px;
+    margin: 3px 0 6px;
+}
+
+.timeline-item span {
+    color: var(--pink);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.timeline-item p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item p {
+    padding: 12px;
+    font-size: 13px;
+    text-align: center;
+    color: #e2e8f0;
+}
+
+/* CONTACT & SOCIAL */
+.social-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    padding: 25px 15px 35px;
+    font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (TABLET & HP)
+========================================= */
+@media (max-width: 850px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 20px;
+        gap: 14px;
+        text-align: center;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        top: 10px;
+        margin: 10px auto;
+    }
+
+    nav {
+        padding: 12px 20px;
+    }
+
+    section {
+        padding: 25px 20px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .profile-avatar {
+        width: 145px;
+        height: 145px;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .grid-container,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .social-btn {
+        flex: 1 1 45%;
+        justify-content: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <div class="logo">MyPortfolio.</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Home</a></li>
+        <li><a href="#education">Pendidikan</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Pekerjaan</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#projects">Projek</a></li>
+        <li><a href="#hobbies">Hobi</a></li>
+        <li><a href="#experience">Pengalaman</a></li>
+        <li><a href="#contact">Kontak</a></li>
+    </ul>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Buka Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</nav>
+</header>
+
+<div class="container">
+
+<!-- 1. TENTANG SAYA -->
+<section id="about">
+<div class="hero">
+
+    <img src="najwa foto.jpeg" alt="Foto Najwa" class="profile-avatar">
+
+    <div class="hero-text">
+        <h1>HAI, SAYA <span class="gradient-text">NAJWA ZAHIRAH</span></h1>
+
+        <span class="badge">
+            Informatics Student & Creative Crafter
+        </span>
+
+        <p>
+            Selamat datang di portofolio saya!
+            Saya merupakan mahasiswi Informatika yang memiliki ketertarikan pada dunia teknologi,
+            pemrograman, dan desain digital.
+            Selain aktif mempelajari teknologi, saya juga menjalankan bisnis kreatif di bidang buket
+            bunga serta memiliki pengalaman bekerja di bidang tanaman hias.
+        </p>
+
+        <a href="#contact" class="btn">
+            Hubungi Saya
+        </a>
+    </div>
+</div>
+</section>
+
+<!-- 2. PENDIDIKAN -->
+<section id="education">
+<h2 class="section-title">
+    <i class="fa-solid fa-graduation-cap"></i>
+    Riwayat Pendidikan
+</h2>
+
+<div class="timeline">
+    <div class="timeline-item">
+        <span>Pendidikan Tinggi</span>
+        <h3>Mahasiswi Informatika</h3>
+        <p>
+            Sedang menempuh pendidikan di bidang Informatika dengan mempelajari pemrograman,
+            teknologi, sistem komputer, dan pengembangan aplikasi.
+        </p>
+    </div>
+
+    <div class="timeline-item">
+        <span>Pendidikan Sebelumnya</span>
+        <h3>Riwayat Pendidikan Sekolah</h3>
+        <p>
+            MA al iman bulus gebang purworejo.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- 3. MY SKILLS -->
+<section id="skills">
+<h2 class="section-title">
+    <i class="fa-solid fa-laptop-code"></i>
+    My Skills
+</h2>
+
+<div class="grid-container">
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Programming</h3>
+        <p>HTML, CSS dan dasar pemrograman.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3>Graphic Design</h3>
+        <p>Desain grafis menggunakan CorelDRAW.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-cube"></i></div>
+        <h3>3D Modeling</h3>
+        <p>Pembuatan objek 3D menggunakan Blender.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+        <h3>Electronics</h3>
+        <p>Dasar elektronika dan Arduino.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <h3>Business Management</h3>
+        <p>Pengelolaan penjualan dan pelayanan pelanggan.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-gift"></i></div>
+        <h3>Creative Crafting</h3>
+        <p>Membuat buket dan kerajinan tangan.</p>
+    </div>
+</div>
+
+<h3 style="margin:30px 0 20px; font-size: 18px;">Kemampuan Saya</h3>
+
+<div class="skill">
+    <div class="skill-info">
+        <span>HTML & CSS</span><span>75%</span>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-progress" style="width:75%"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <div class="skill-info">
+        <span>CorelDRAW</span><span>80%</span>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-progress" style="width:80%"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <div class="skill-info">
+        <span>Arduino</span><span>70%</span>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-progress" style="width:70%"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <div class="skill-info">
+        <span>Blender</span><span>65%</span>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-progress" style="width:65%"></div>
+    </div>
+</div>
+</section>
+
+<!-- 4. PEKERJAAN SAMPINGAN -->
+<section id="work">
+<h2 class="section-title">
+    <i class="fa-solid fa-briefcase"></i>
+    Pekerjaan Sampingan
+</h2>
+
+<div class="grid-container">
+    <div class="card">
+        
+        <div class="card-icon"><i class="fa-solid fa-gift"></i></div>
+        <h3>Bisnis Gift & Bouquet</h3>
+        <p>
+            Menerima pesanan kustom buket bunga, buket uang, dan hampers kreatif untuk
+            berbagai acara seperti wisuda, ulang tahun, dan momen spesial lainnya.
+            Mengutamakan kreativitas, kerapian, serta kepuasan pelanggan.
+        </p>
+    </div>
+
+    <div class="card">
+       
+        <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Offline Store Manager Zahirah Garden</h3>
+        <p>
+            Mengelola data penjualan pada kebun tanaman hias Zahirah Garden serta membantu
+            kegiatan operasional toko. Memiliki pengalaman bekerja lebih dari
+            2 tahun dalam bidang tanaman hias.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- 5. GALERI -->
+<section id="gallery">
+<h2 class="section-title">
+    <i class="fa-solid fa-images"></i>
+    Galeri Kegiatan & Karya
+</h2>
+
+<p style="color:#94a3b8; margin-bottom:20px; font-size:14px;">
+    Dokumentasi hasil kreativitas dan kegiatan saya.
+</p>
+
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="buket.jpeg" alt="Buket bunga">
+        <p>Handmade Flower Bouquet</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="tanaman.jpeg" alt="Tanaman hias">
+        <p>Ornamental Plants</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="kegiatan.jpeg" alt="Kegiatan">
+        <p>Creative Activities</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="konter.jpeg" alt="Hasil karya">
+        <p>My Business Small</p>
+    </div>
+</div>
+</section>
+
+<!-- 6. PROJEK & KARYA -->
+<section id="projects">
+<h2 class="section-title">
+    <i class="fa-solid fa-laptop-code"></i>
+    Projek & Karya Informatika
+</h2>
+
+<div class="grid-container">
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-temperature-half"></i></div>
+        <h3>Sistem Sensor Suhu Otomatis</h3>
+        <p>
+            Projek elektronika membangun alat pemantau suhu otomatis menggunakan Arduino dan
+            rangkaian sensor.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3>Desain Grafis Vektor</h3>
+        <p>
+            Pembuatan ilustrasi digital, desain logo, dan aset visual menggunakan CorelDRAW.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-cube"></i></div>
+        <h3>3D Modeling & Grafika</h3>
+        <p>
+            Perancangan objek tiga dimensi, tekstur, dan rendering menggunakan Blender.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+        <h3>Personal Portfolio Website</h3>
+        <p>
+            Pembuatan website portofolio pribadi menggunakan HTML dan CSS.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- 7. HOBI & MINAT -->
+<section id="hobbies">
+<h2 class="section-title">
+    <i class="fa-solid fa-heart"></i>
+    Hobi & Minat
+</h2>
+
+<div class="grid-container">
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Coding & Desain Web</h3>
+        <p>
+            Mengeksplorasi pembuatan website, pemrograman HTML, CSS, dan ingin
+            mengembangkan kemampuan Python.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Kerajinan Tangan</h3>
+        <p>
+            Membuat karya seni kreatif manual dan merangkai berbagai produk kustom.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Berkebun</h3>
+        <p>
+            Merawat dan memelihara tanaman hias di waktu luang.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- 8. PENGALAMAN & PENCAPAIAN -->
+<section id="experience">
+<h2 class="section-title">
+    <i class="fa-solid fa-star"></i>
+    Pengalaman & Pencapaian
+</h2>
+
+<div class="timeline">
+    <div class="timeline-item">
+        <span>Lebih dari 2 Tahun</span>
+        <h3>Pengalaman di Zahirah Garden</h3>
+        <p>
+            Memiliki pengalaman dalam pengelolaan toko tanaman hias, pencatatan data
+            penjualan, dan pelayanan pelanggan.
+        </p>
+    </div>
+
+    <div class="timeline-item">
+        <span>Creative Business</span>
+        <h3>Pengembangan Bisnis Buket</h3>
+        <p>
+            Mengembangkan kreativitas melalui pembuatan buket bunga, buket uang,
+            dan hampers sesuai permintaan pelanggan.
+        </p>
+    </div>
+
+    <div class="timeline-item">
+        <span>Academic Project</span>
+        <h3>Projek Elektronika & Desain Digital</h3>
+        <p>
+            Mengembangkan keterampilan melalui pengerjaan projek Arduino, desain grafis,
+            dan pemodelan tiga dimensi.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- 9. KONTAK -->
+<section id="contact">
+<h2 class="section-title">
+    <i class="fa-solid fa-paper-plane"></i>
+    Hubungi Saya
+</h2>
+
+<p style="color:#94a3b8; margin-bottom:20px; font-size:14px;">
+    Mari terhubung melalui media sosial berikut.
+</p>
+
+<div class="social-grid">
+    <a href="https://www.instagram.com/nazawaa_19/" target="_blank" rel="noopener" class="social-btn">
+        <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@najwazah19" target="_blank" rel="noopener" class="social-btn">
+        <i class="fa-brands fa-tiktok"></i> TikTok
+    </a>
+
+    <a href="https://www.facebook.com/share/1EgGEhmiK5/" target="_blank" rel="noopener" class="social-btn">
+        <i class="fa-brands fa-facebook"></i> Facebook
+    </a>
+
+    <a href="#" class="social-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+</div>
+</section>
+
+</div>
+
+<footer>
+    <p>© 2026 Najwa Zahirah. Designed with HTML & CSS. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+</script>
+
+</body>
+</html>
